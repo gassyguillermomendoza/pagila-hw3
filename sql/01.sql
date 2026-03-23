@@ -12,3 +12,10 @@
  *
  * Your goal should be to have your queries remain correct even if the data in the database changes arbitrarily.
  */
+
+select count(*) as count
+from customer c
+join address a on c.address_id= a.address_id
+join city ci on a.city_id= ci.city_id
+join country co on ci.country_id = co.country_id
+where co.country !='United States';
